@@ -2,6 +2,9 @@
 This is the Node for my simple Home automatization network.
 
 R.Pollak
+
+The softuart code is take from Martin Thomas
+
 */
 
 #define WITH_STDIO_DEMO   1 /* 1: enable, 0: disable */
@@ -114,8 +117,7 @@ static void stdio_demo_func( void )
 int main(void)
 {
 	char c;
-	static const char pstring[] PROGMEM = 
-		"adapted for Atmel AVR and this demo by Martin Thomas\r\n";
+
 	unsigned short cnt = 0;
 #if (F_CPU > 4000000UL)
 #define CNTHALLO (unsigned int)(0xFFFF)
@@ -140,11 +142,6 @@ int main(void)
 	sei();
 	
 	
-
-	//	softuart_puts_P( "\r\nSoftuart Demo-Application\r\n" );    // "implicit" PSTR
-	//softuart_puts_p( PSTR("generic softuart driver code by Colin Gittins\r\n") ); // explicit PSTR
-	//softuart_puts_p( pstring ); // pstring defined with PROGMEM
-	//softuart_puts( "--\r\n" );  // string "from RAM"
 
 #if WITH_STDIO_DEMO
 		stdio_demo_func();
